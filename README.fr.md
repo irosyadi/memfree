@@ -62,7 +62,7 @@ MemFree est équipé de fonctionnalités puissantes qui répondent à divers bes
 
 -   🖼️**Format d'entrée de recherche multiple**: Texte, images, fichiers et pages Web, en particulier, il prend en charge la recherche, la comparaison, la synthèse et l'analyse multi-images.
 
--   📊**Plusieurs méthodes de présentation des résultats**: Text, mind maps, images, and videos.
+-   📊**Plusieurs méthodes de présentation des résultats**: Textes, cartes mentales, images et vidéos.
 
 -   📄**Compatibilité des formats de fichiers locaux**: Prend en charge les fichiers texte, PDF, Docx, PPTX et Markdown.
 
@@ -86,7 +86,7 @@ MemFree est équipé de fonctionnalités puissantes qui répondent à divers bes
 -   **📄 Génération fichier-page** : Transformez n'importe quel contenu de fichier en une page Web magnifiquement structurée avec l'analyse IA et le résumé IA
 -   **✏️ Intégration de l'éditeur de code**: Modifiez et affinez votre code généré avec des capacités d'édition de type VSCode, complétées par la coloration syntaxique et la saisie semi-automatique.
 -   **✨ Prise en charge des animations**: Créez des pages Web attrayantes avec des effets d'animation intégrés, donnant vie à votre contenu avec des transitions fluides et des éléments dynamiques
--   **⚛️ React + TailWind + Shadcn UI Integration** : exploitez le code généré par l'IA à l'aide de la pile frontale la plus populaire : React, TailWind et Shadcn UI
+-   **⚛️ Intégration de l'interface utilisateur React + TailWind + Shadcn** : exploitez le code généré par l'IA à l'aide de la pile frontale la plus populaire : React, TailWind et Shadcn UI
 -   **🚀 Publication de l'interface utilisateur en un clic**: Publiez et partagez votre interface utilisateur sur le Web instantanément en un seul clic
 -   **📱 Code réactif et aperçu**: prévisualisez votre interface utilisateur sur différents appareils en temps réel, garantissant une adaptation parfaite à toutes les tailles d'écran
 -   **🌓 Code et aperçu du mode sombre**: Générez sans effort du code d'interface utilisateur alimenté par l'IA avec prise en charge intégrée du mode sombre, vous permettant de prévisualiser instantanément les modes clair et sombre
@@ -132,7 +132,7 @@ MemFree est équipé de fonctionnalités puissantes qui répondent à divers bes
 
 ### 6 Déployer MemFree sur les pages Cloudflare
 
--   [Comment migrer MemFree de Vercel vers Cloudflare - pages suivantes](https://www.memfree.me/blog/couldflare-next-on-page-edge)
+-   [Comment migrer MemFree de Vercel vers Cloudflare, pages suivantes](https://www.memfree.me/blog/couldflare-next-on-page-edge)
 
 ## Installations auto-hébergées
 
@@ -201,13 +201,13 @@ Voici comment vous pouvez contribuer :
 
 -   [Discorde MemFree](https://discord.com/invite/7QqyMSTaRq)
 
-## Roadmap
+## Feuille de route
 
 -   AI Coding Assistant
 
 ## Licence
 
-MemFree est soutenu par[MemGratuit](https://www.memfree.me/) and licensed under [AVEC](https://github.com/memfreeme/memfree/blob/main/LICENSE).
+MemFree est soutenu par[MemGratuit](https://www.memfree.me/)et sous licence[AVEC](https://github.com/memfreeme/memfree/blob/main/LICENSE).
 
 ## Propulsé par MemFree
 
