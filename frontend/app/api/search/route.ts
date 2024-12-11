@@ -13,10 +13,14 @@ import { productSearch } from '@/lib/tools/product';
 import { indieMakerSearch } from '@/lib/tools/indie';
 import { handleRateLimit } from '@/lib/ratelimit';
 import { isProUser } from '@/lib/shared-utils';
+import { chat } from '@/lib/tools/chat';
 
-const updateSource = function (model, source, messages) {
+const updateSource = function (model, source, messages, isSearch) {
     if (model === O1_MIMI || model === O1_PREVIEW) {
         return SearchCategory.O1;
+    }
+    if (!isSearch) {
+        return SearchCategory.CHAT;
     }
     const file = messages[0].attachments?.[0];
     if (file) {
@@ -51,9 +55,9 @@ export async function POST(req: NextRequest) {
             { status: 429 },
         );
     }
-    let { model, source, messages, profile } = await req.json();
+    let { model, source, messages, profile, isSearch } = await req.json();
 
-    console.log('model', model, 'source', source, 'messages', messages, 'userId', userId);
+    console.log('model', model, 'source', source, 'messages', messages, 'userId', userId, 'isSearch', isSearch);
 
     if (isProModel(model) && !isPro) {
         return NextResponse.json(
@@ -73,14 +77,18 @@ export async function POST(req: NextRequest) {
         );
     }
 
-    source = updateSource(model, source, messages);
+    source = updateSource(model, source, messages, isSearch);
 
     try {
         const readableStream = new ReadableStream({
             async start(controller) {
                 switch (source) {
                     case SearchCategory.O1: {
-                        await o1Answer(messages, isPro, userId, profile, streamController(controller), model);
+                        await o1Answer(isSearch, messages, isPro, userId, profile, streamController(controller), model);
+                        break;
+                    }
+                    case SearchCategory.CHAT: {
+                        await chat(messages, isPro, userId, profile, streamController(controller), model);
                         break;
                     }
                     case SearchCategory.PRODUCT_HUNT: {

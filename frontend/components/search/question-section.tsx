@@ -1,7 +1,7 @@
 import { Icons } from '@/components/shared/icons';
 import useCopyToClipboard from '@/hooks/use-copy-clipboard';
-import { Pencil, Trash2 } from 'lucide-react';
-import React, { useState } from 'react';
+import { Pencil, RefreshCcw, Trash2 } from 'lucide-react';
+import React, { useState, useMemo, useCallback, memo } from 'react';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -10,38 +10,88 @@ import { useSearchStore } from '@/lib/store/local-history';
 import IconButton from '@/components/layout/icon-button';
 
 interface QuestionSectionProps {
-    mesageId: string;
+    messageId: string;
     content: string;
-    isShared?: boolean;
-    onContentChange: (newContent: string) => void;
+    onContentChange: (content: string) => void;
+    isShared: boolean;
+    reload: (messageId: string, force?: boolean) => void;
 }
 
-const QuestionSection: React.FC<QuestionSectionProps> = React.memo(({ mesageId, content, onContentChange, isShared }) => {
-    const getTextSizeClass = (text: string) => {
+const QuestionSection = memo(({ messageId, content, onContentChange, isShared, reload }: QuestionSectionProps) => {
+    const getTextSizeClass = useCallback((text) => {
         const length = text.length;
         if (length < 20) return 'text-lg font-medium';
         if (length < 40) return 'text-base font-normal';
         return 'text-sm font-normal';
-    };
-    const textSizeClass = getTextSizeClass(content);
+    }, []);
+
+    const textSizeClass = useMemo(() => getTextSizeClass(content), [content, getTextSizeClass]);
 
     const { hasCopied, copyToClipboard } = useCopyToClipboard();
-
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [editedContent, setEditedContent] = useState(content);
 
-    const handleEditClick = () => {
+    const handleReloadClick = useCallback(() => {
+        reload(messageId, true);
+    }, [messageId, reload]);
+
+    const handleEditClick = useCallback(() => {
         setEditedContent(content);
         setIsEditModalOpen(true);
-    };
+    }, [content]);
 
-    const handleSaveEdit = () => {
+    const handleSaveEdit = useCallback(() => {
         onContentChange(editedContent);
         setIsEditModalOpen(false);
-    };
-    const t = useTranslations('Question');
+    }, [editedContent, onContentChange]);
 
+    const handleCopy = useCallback(() => {
+        copyToClipboard(content);
+    }, [content, copyToClipboard]);
+
+    const t = useTranslations('Question');
+    const t_search = useTranslations('ActionButtons');
     const { deleteMessage } = useSearchStore();
+
+    const actionButtons = useMemo(() => {
+        if (isShared) return null;
+        return (
+            <div className="flex space-x-4 opacity-0 group-hover/question:opacity-100">
+                <IconButton onClick={handleCopy} tooltipText="Copy">
+                    {hasCopied ? <Icons.check className="text-primary" /> : <Icons.copy className="text-primary" />}
+                </IconButton>
+                <IconButton onClick={handleReloadClick} tooltipText={t_search('Reload')}>
+                    <RefreshCcw className="text-primary" />
+                </IconButton>
+                <IconButton onClick={handleEditClick} tooltipText="Edit">
+                    <Pencil className="text-primary " />
+                </IconButton>
+                <IconButton onClick={() => deleteMessage(messageId)} tooltipText="Delete">
+                    <Trash2 className="text-primary " />
+                </IconButton>
+            </div>
+        );
+    }, [isShared, handleCopy, hasCopied, handleReloadClick, t_search, handleEditClick, deleteMessage, messageId]);
+
+    const dialogContent = useMemo(
+        () => (
+            <DialogContent className="max-w-xl">
+                <DialogHeader>
+                    <DialogTitle>{t('title')}</DialogTitle>
+                </DialogHeader>
+                <Textarea value={editedContent} onChange={(e) => setEditedContent(e.target.value)} className="min-h-[200px]" />
+                <DialogFooter>
+                    <Button variant="outline" className="md:mr-4 rounded-xl my-4 md:my-0" onClick={() => setIsEditModalOpen(false)} aria-label={t('Cancel')}>
+                        {t('Cancel')}
+                    </Button>
+                    <Button className="rounded-xl" onClick={handleSaveEdit} aria-label={t('Search')}>
+                        {t('Search')}
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        ),
+        [editedContent, t, handleSaveEdit],
+    );
 
     return (
         <>
@@ -51,41 +101,11 @@ const QuestionSection: React.FC<QuestionSectionProps> = React.memo(({ mesageId, 
                         {content}
                     </h2>
                 </div>
-                {!isShared && (
-                    <div className="flex space-x-4 opacity-0 group-hover/question:opacity-100">
-                        <IconButton onClick={() => copyToClipboard(content)} tooltipText="Copy">
-                            {hasCopied ? <Icons.check className="text-primary" /> : <Icons.copy className="text-primary" />}
-                        </IconButton>
-                        <IconButton onClick={handleEditClick} tooltipText="Edit">
-                            <Pencil className="text-primary " />
-                        </IconButton>
-                        <IconButton onClick={() => deleteMessage(mesageId)} tooltipText="Delete">
-                            <Trash2 className="text-primary " />
-                        </IconButton>
-                    </div>
-                )}
+                {actionButtons}
             </div>
 
             <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-                <DialogContent className="max-w-xl">
-                    <DialogHeader>
-                        <DialogTitle>{t('title')}</DialogTitle>
-                    </DialogHeader>
-                    <Textarea value={editedContent} onChange={(e) => setEditedContent(e.target.value)} className="min-h-[200px]" />
-                    <DialogFooter>
-                        <Button
-                            variant="outline"
-                            className="md:mr-4 rounded-xl my-4 md:my-0"
-                            onClick={() => setIsEditModalOpen(false)}
-                            aria-label={t('Cancel')}
-                        >
-                            {t('Cancel')}
-                        </Button>
-                        <Button className="rounded-xl" onClick={handleSaveEdit} aria-label={t('Search')}>
-                            {t('Search')}
-                        </Button>
-                    </DialogFooter>
-                </DialogContent>
+                {dialogContent}
             </Dialog>
         </>
     );

@@ -23,20 +23,24 @@ export const useProfileStore = create<ProfileState>()(
 type UIState = {
     isSearch: boolean;
     isShadcnUI: boolean;
+    showMindMap: boolean;
     setIsSearch: (isSearch: boolean) => void;
     setIsShadcnUI: (isShadcnUI: boolean) => void;
+    setShowMindMap: (showMindMap: boolean) => void;
 };
 
 export const useUIStore = create<UIState>()(
     persist(
         (set) => ({
-            isSearch: false,
+            isSearch: true,
             isShadcnUI: true,
+            showMindMap: false,
             setIsSearch: (search: boolean) => set({ isSearch: search }),
             setIsShadcnUI: (shadcnUI: boolean) => set({ isShadcnUI: shadcnUI }),
+            setShowMindMap: (showMindMap: boolean) => set({ showMindMap }),
         }),
         {
-            name: 'UI-storage',
+            name: 'UI-config',
         },
     ),
 );
@@ -49,27 +53,6 @@ type UserState = {
 export const useUserStore = create<UserState>((set) => ({
     user: null,
     setUser: (user: User) => set({ user }),
-}));
-
-type ModeState = {
-    mode: 'search' | 'ask' | 'chat';
-    setMode: (mode: 'search' | 'ask' | 'chat') => void;
-    initMode: () => 'search' | 'ask' | 'chat';
-};
-
-export const useModeStore = create<ModeState>((set) => ({
-    mode: 'ask',
-    setMode: (mode: 'search' | 'ask' | 'chat') => {
-        if (typeof window !== 'undefined' && mode) {
-            localStorage.setItem('mode', mode);
-            console.log('set mode:', mode);
-            set({ mode });
-        }
-    },
-    initMode: (): 'search' | 'ask' | 'chat' => {
-        const savedMode = localStorage.getItem('mode');
-        return savedMode === 'search' || savedMode === 'ask' || savedMode === 'chat' ? savedMode : 'ask';
-    },
 }));
 
 type ConfigState = {

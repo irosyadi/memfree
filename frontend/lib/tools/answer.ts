@@ -1,5 +1,7 @@
+import 'server-only';
+
 import { getMaxOutputToken, StreamHandler } from '@/lib/llm/llm';
-import { AcademicPrompt, DirectAnswerPrompt, ProductHuntPrompt, SummaryPrompt, IndieMakerPrompt } from '@/lib/llm/prompt';
+import { DirectAnswerPrompt, ProductHuntPrompt, SummaryPrompt, IndieMakerPrompt } from '@/lib/llm/prompt';
 import { logError } from '@/lib/log';
 import { extractErrorMessage } from '@/lib/server-utils';
 import { SearchCategory, TextSource } from '@/lib/types';
@@ -26,6 +28,7 @@ export async function directlyAnswer(
             model: model,
             system: system,
             prompt: query,
+            maxRetries: 0,
             maxTokens: maxTokens,
             temperature: 0.1,
         });
@@ -50,8 +53,6 @@ function promptFormatterAnswer(source: SearchCategory, profile: string, searchCo
             return util.format(IndieMakerPrompt, context);
         case SearchCategory.WEB_PAGE:
             return util.format(SummaryPrompt, JSON.stringify(searchContexts, null, 2));
-        case SearchCategory.ACADEMIC:
-            return util.format(AcademicPrompt, context);
         default:
             return util.format(DirectAnswerPrompt, profile, context, history);
     }
