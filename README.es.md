@@ -48,7 +48,7 @@ Memfree utiliza el modelo de IA más potente: Claude 3.5 Sonnet y el marco de in
 ## ¿Qué hace que MemFree sea valioso?
 
 -   **Gestión eficiente del conocimiento**: MemFree elimina la necesidad de organización manual de notas, marcadores y documentos. Cuando necesite información, simplemente busque en MemFree para encontrar rápidamente respuestas relevantes, liberando su memoria y aumentando la productividad.
--   **Resúmenes de IA que ahorran tiempo**: En lugar de hacer clic en varios resultados de búsqueda de Google, MemFree utiliza IA para resumir instantáneamente el mejor contenido de las páginas web y su base de conocimientos, lo que ahorra un tiempo valioso.
+-   **Resúmenes de IA que ahorran tiempo**: Instead of clicking through multiple Google search results, MemFree uses AI to instantly summarize the best content from web pages and your knowledge base, saving valuable time.
 -   **Solución rentable**: Evite suscripciones múltiples a servicios como ChatGPT Plus, Claude Pro y Gemini Advanced. MemFree integra sus funcionalidades, reduciendo significativamente los costos mensuales.
 -   **Creación de páginas de interfaz de usuario 100 veces más rápida**: Convierta texto o imágenes en un código sorprendente y listo para producción en segundos. Visualice sus diseños mientras crea. Publique sus páginas sin problemas.
 
@@ -82,16 +82,16 @@ MemFree está equipado con potentes funciones que satisfacen diversas necesidade
 
 -   **🖥️ Vista previa de la interfaz de usuario en tiempo real**: Representa y previsualiza instantáneamente la interfaz de usuario generada
 -   **🔍 Búsqueda de contenido impulsada por IA**: Enriquezca su interfaz de usuario con contenido relevante utilizando nuestra función de búsqueda avanzada de IA
--   **🖼 Generación de UI basada en imágenes**: cree componentes de interfaz de usuario y páginas que coincidan estrechamente con sus imágenes de referencia.
+-   **🖼 Generación de UI basada en imágenes**: cree componentes de interfaz de usuario y páginas que coincidan estrechamente con sus imágenes de referencia
 -   **📄 Generación de archivo a página**: Transforme el contenido de cualquier archivo en una página web bellamente estructurada con análisis y resumen de IA.
 -   **✏️ Integración del editor de código**: Edite y refine su código generado con capacidades de edición similares a VSCode, completas con resaltado de sintaxis y autocompletado.
 -   **✨ Soporte de animación**: cree páginas web atractivas con efectos de animación integrados, dando vida a su contenido con transiciones suaves y elementos dinámicos.
 -   **⚛️ Integración de interfaz de usuario de React + TailWind + Shadcn**: Aproveche el código generado por IA utilizando la pila de front-end más popular: React, TailWind y Shadcn UI
 -   **🚀 Publicación de UI con un clic**: Publique y comparta su interfaz de usuario en la web al instante con un solo clic
--   **📱 Código responsivo y vista previa**: Obtenga una vista previa de su interfaz de usuario en varios dispositivos en tiempo real, lo que garantiza una adaptación perfecta a todos los tamaños de pantalla.
+-   **📱 Código responsivo y vista previa** : Preview your UI across various devices in real-time, ensuring perfect adaptation to all screen sizes
 -   **🌓 Código y vista previa del modo oscuro**: Genere sin esfuerzo código de interfaz de usuario impulsado por IA con soporte para modo oscuro incorporado, lo que le permite obtener una vista previa de los modos claro y oscuro al instante.
 -   **📸 Exportación de capturas de pantalla de la interfaz de usuario**: Exporte y comparta fácilmente sus diseños de interfaz de usuario como capturas de pantalla de alta calidad para una colaboración perfecta
--   **🛠️ Corrección de errores inteligente**: Si bien el modelo avanzado de IA de MemFree y las sofisticadas reglas de código se esfuerzan por alcanzar la perfección, pueden ocurrir errores ocasionales. Nuestra función de corrección inteligente de errores le permite solucionar instantáneamente cualquier problema con solo un clic
+-   **🛠️ Corrección de errores inteligente**: Si bien el modelo de IA avanzado de MemFree y las sofisticadas reglas de código se esfuerzan por alcanzar la perfección, pueden ocurrir errores ocasionales. Nuestra función de corrección inteligente de errores le permite solucionar instantáneamente cualquier problema con un solo clic
 
 ## Flujo de trabajo de búsqueda de IA híbrida de MemFree
 
@@ -152,7 +152,7 @@ Cree una base de datos compatible con Redis en segundos:[Redis oculto](https://u
 
 #### Clave API de OpenAI
 
-Obtenga una clave API de OpenAI:[AbiertoAI](https://platform.openai.com)
+Obtenga una clave API de OpenAI:[Abierto AI](https://platform.openai.com)
 
 #### Clave API de Serper
 
@@ -170,7 +170,7 @@ Obtenga una clave API de Serper:[Serpiente](https://serper.dev/api-key)
 
     bun run dev
 
-### Servicio de vectores
+### Servicio vectorial
 
     cd vector
 
