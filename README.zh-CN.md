@@ -1,4 +1,4 @@
-# MemFree
+# 内存自由
 
 <a href="https://www.memfree.me">
   <img alt="MemFree – Hybrid AI Search Engine" src=".assets/memfree-ai-search.gif" width="100%">
@@ -48,7 +48,7 @@ Memfree 使用最强大的 AI 模型 - Claude 3.5 Sonnet 和最流行的前端�
 ## 是什么让 MemFree 有价值？
 
 -   **高效的知识管理**：MemFree 消除了手动组织笔记、书签和文档的需要。当您需要信息时，只需在 MemFree 中搜索即可快速找到相关答案，从而释放您的内存并提高工作效率。
--   **节省时间的人工智能摘要**：MemFree 无需点击多个 Google 搜索结果，而是使用 AI 立即总结网页和知识库中的最佳内容，从而节省宝贵的时间。
+-   **节省时间的人工智能摘要**：MemFree 使用 AI 立即总结网页和知识库中的最佳内容，无需点击多个 Google 搜索结果，从而节省宝贵的时间。
 -   **经济高效的解决方案**：避免多次订阅 ChatGPT Plus、Claude Pro 和 Gemini Advanced 等服务。 MemFree 集成了它们的功能，显着降低了每月的成本。
 -   **UI 页面创建速度提高 100 倍**：在几秒钟内将文本或图像转换为令人惊叹的、可用于生产的代码，在创建时可视化您的设计，无缝发布您的页面。
 
@@ -85,8 +85,8 @@ MemFree 配备强大的功能，可满足各种搜索和生产力需求：
 -   **🖼 图像驱动的 UI 生成**：创建与您的参考图像紧密匹配的 UI 组件和页面
 -   **📄 文件到页面生成**：通过AI解析和AI摘要将任何文件内容转换为结构精美的网页
 -   **✏️ 代码编辑器集成**：使用类似 VSCode 的编辑功能编辑和优化生成的代码，并具有语法突出显示和自动完成功能
--   **✨ 动画支持**：利用内置动画效果打造引人入胜的网页，通过流畅的过渡和动态元素为内容注入活力
--   **⚛️ React + TailWind + Shadcn UI 集成**：通过最流行的前端技术栈（React、TailWind 和 Shadcn UI）驱动 AI 生成的代码
+-   **✨ 动画支持**：创建具有内置动画效果的引人入胜的网页，通过平滑的过渡和动态元素使您的内容栩栩如生
+-   **⚛️ React + TailWind + Shadcn UI 集成**：使用最流行的前端堆栈利用人工智能生成的代码：React、TailWind 和 Shadcn UI
 -   **🚀 一键式 UI 发布**：只需单击一下即可立即将您的 UI 发布并共享到网络上
 -   **📱 响应式代码和预览**：在各种设备上实时预览您的UI，确保完美适应所有屏幕尺寸
 -   **🌓 深色模式代码和预览**：轻松生成人工智能驱动的 UI 代码，并内置深色模式支持，让您可以立即预览浅色和深色模式
@@ -122,7 +122,7 @@ MemFree 配备强大的功能，可满足各种搜索和生产力需求：
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/memfreeme/memfree&create_from_path=frontend/#UPSTASH_REDIS_REST_TOKEN
 =your_api_token&UPSTASH_REDIS_REST_URL=your_rest_url&SERPER_API_KEY=your_api_key&AUTH_SECRET=your_auth_key&OPENAI_API_KEY=your_api_key"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
-### 4 Railway 部署
+### 4 铁路部署
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/HPTFRR)
 
@@ -138,13 +138,11 @@ MemFree 配备强大的功能，可满足各种搜索和生产力需求：
 
 ### 先决条件
 
-#### 安装 Bun
+#### 安装好
 
-```
-curl -fsSL https://bun.sh/install | bash
-```
+    curl -fsSL https://bun.sh/install | bash
 
-> 未找到 Bun 错误
+> 未找到面包错误
 
 如果您收到与未找到 Bun 命令相关的错误。查看：[Bun 官方文档](https://bun.sh/docs/installation#checking-installation)
 
@@ -154,11 +152,11 @@ curl -fsSL https://bun.sh/install | bash
 
 #### OpenAI API 密钥
 
-获取 OpenAI API 密钥：[OpenAI](https://platform.openai.com)
+获取 OpenAI API 密钥：[开放人工智能](https://platform.openai.com)
 
 #### Serper API 密钥
 
-获取 Serper API 密钥：[Serper](https://serper.dev/api-key)
+获取 Serper API 密钥：[毒蛇](https://serper.dev/api-key)
 
 ### 前端
 
@@ -168,30 +166,28 @@ curl -fsSL https://bun.sh/install | bash
 
     cp env-example .env
 
-    # 在 .env 中添加你的 OpenAI API 密钥、Upstash Redis URL 和 Serper API 密钥
+    # Add your OpenAI API Key, Upstash Redis URL, and Serper API Key to .env
 
     bun run dev
 
-### 向量服务
+### 矢量服务
 
-```
-cd vector
+    cd vector
 
-bun i
+    bun i
 
-cp env-example .env
+    cp env-example .env
 
-# 在 .env 中添加你的 OpenAI API 密钥和 Upstash Redis URL
+    # Add your OpenAI API Key, Upstash Redis URL to .env
 
-bun run index.ts
-```
+    bun run index.ts
 
 ## 贡献
 
 您可以通过以下方式做出贡献：
 
--   [打开一个 Issue ](https://github.com/memfreeme/memfree/issues)如果您认为自己遇到了错误。
--   通过提交[拉取请求](https://github.com/memfreeme/memfree/pulls)添加新功能、进行体验优化或修复错误。
+-   [打开一个问题](https://github.com/memfreeme/memfree/issues)如果您认为自己遇到了错误。
+-   做一个[拉取请求](https://github.com/memfreeme/memfree/pulls)添加新功能/提高生活质量/修复错误。
 
 ## 感谢所有贡献者
 
@@ -203,15 +199,15 @@ bun run index.ts
 
 ## 帮助与支持
 
--   [MemFree Discord](https://discord.com/invite/7QqyMSTaRq)
+-   [MemFree 不和谐](https://discord.com/invite/7QqyMSTaRq)
 
 ## 路线图
 
 -   [MemFree 路线图](https://www.memfree.me/roadmap)
 
-## License
+## 执照
 
-MemFree 由 [MemFree](https://www.memfree.me/) 支持，并遵循 [MIT](https://github.com/memfreeme/memfree/blob/main/LICENSE) 许可证。
+MemFree 由以下机构支持[内存自由](https://www.memfree.me/)并获得许可[和](https://github.com/memfreeme/memfree/blob/main/LICENSE).
 
 ## 由 MemFree 提供支持
 
@@ -220,6 +216,6 @@ MemFree 由 [MemFree](https://www.memfree.me/) 支持，并遵循 [MIT](https://
 -   [StorySnap - 将图像变成故事](https://www.snapstoryai.com)
 -   [React + Shadcn UI 预览](https://reactshadcn.com)
 
-## Star 历史
+## 明星历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=memfreeme/memfree&type=Date)](https://star-history.com/#memfreeme/memfree&Date)
