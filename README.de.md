@@ -60,7 +60,7 @@ MemFree ist mit leistungsstarken Funktionen ausgestattet, die verschiedene Such-
 
 -   🌐**Mehrere Suchmaschinen werden unterstützt**: Funktioniert mit Google, Exa und Vector.
 
--   🖼️**Mehrere Sucheingabeformate**: Insbesondere Texte, Bilder, Dateien und Webseiten. Unterstützt die Suche, den Vergleich, die Zusammenfassung und die Analyse mehrerer Bilder.
+-   🖼️**Mehrere Sucheingabeformate**: Insbesondere Texte, Bilder, Dateien und Webseiten. Es unterstützt die Suche, den Vergleich, die Zusammenfassung und die Analyse mehrerer Bilder.
 
 -   📊**Mehrere Methoden zur Ergebnispräsentation**: Text, Mindmaps, Bilder und Videos.
 
@@ -80,11 +80,11 @@ MemFree ist mit leistungsstarken Funktionen ausgestattet, die verschiedene Such-
 
 ## Funktionen des MemFree AI UI Generators
 
--   **🖥️ Echtzeit-UI-Vorschau**: Generierte Benutzeroberfläche sofort rendern und in der Vorschau anzeigen
+-   **🖥️ Echtzeit-UI-Vorschau**: Sofortiges Rendern und Vorschau der generierten Benutzeroberfläche
 -   **🔍 KI-gestützte Inhaltssuche**: Bereichern Sie Ihre Benutzeroberfläche mit relevanten Inhalten mithilfe unserer erweiterten KI-Suchfunktion
 -   **🖼 Bildgesteuerte UI-Generierung**: Erstellen Sie UI-Komponenten und Seiten, die Ihren Referenzbildern genau entsprechen
 -   **📄 Datei-zu-Seite-Generierung**: Verwandeln Sie jeden Dateiinhalt in eine schön strukturierte Webseite mit KI-Analyse und KI-Zusammenfassung
--   **✏️ Code-Editor-Integration**: Bearbeiten und verfeinern Sie Ihren generierten Code mit VSCode-ähnlichen Bearbeitungsfunktionen, einschließlich Syntaxhervorhebung und automatischer Vervollständigung
+-   **✏️ Code-Editor-Integration**: Bearbeiten und verfeinern Sie Ihren generierten Code mit VSCode-ähnlichen Bearbeitungsfunktionen, komplett mit Syntaxhervorhebung und automatischer Vervollständigung
 -   **✨ Animationsunterstützung**: Erstellen Sie ansprechende Webseiten mit integrierten Animationseffekten und erwecken Sie Ihre Inhalte mit sanften Übergängen und dynamischen Elementen zum Leben
 -   **⚛️ React + TailWind + Shadcn UI-Integration**: Nutzen Sie KI-generierten Code mit dem beliebtesten Front-End-Stack: React, TailWind und Shadcn UI
 -   **🚀 One-Click-UI-Veröffentlichung**: Veröffentlichen und teilen Sie Ihre Benutzeroberfläche sofort mit einem einzigen Klick im Web
@@ -107,7 +107,7 @@ MemFree ist mit leistungsstarken Funktionen ausgestattet, die verschiedene Such-
 
 ## One-Click-Bereitstellung
 
-[Anleitung zur MemFree One-Click-Bereitstellung](https://www.memfree.me/docs/one-click-deploy-ai-search)
+[MemFree One-Click-Bereitstellungshandbuch](https://www.memfree.me/docs/one-click-deploy-ai-search)
 
 ### 1 Backend mit Zeabur bereitstellen
 
@@ -122,7 +122,7 @@ MemFree ist mit leistungsstarken Funktionen ausgestattet, die verschiedene Such-
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/memfreeme/memfree&create_from_path=frontend/#UPSTASH_REDIS_REST_TOKEN
 =your_api_token&UPSTASH_REDIS_REST_URL=your_rest_url&SERPER_API_KEY=your_api_key&AUTH_SECRET=your_auth_key&OPENAI_API_KEY=your_api_key"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
-### 4 Einsatz auf der Schiene
+### 4 Einsatz auf der Eisenbahn
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/HPTFRR)
 
